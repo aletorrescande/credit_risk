@@ -45,9 +45,3 @@ For both cases we followed this steps (data was split for training and testing):
 When looking at the two different machine learning models, we can see that for this analysis resampling the data works best as it yields a better f1 and recall scores. It is important that the model minimizes the false negatives as not detecting a high risk loan could negatively impact the company's performance. 
 
 It is important to note that the excercise did not require us to scale the data, I would recommend this to improve the model.
-
-The libraries and dependencies used are:
-- numpy 
-- pandas
-- Path from pathlib 
-- balanced_accuracy_score, confusion_matrix and classification_report_imbalanced from sklearn.metrics import 
