@@ -1,31 +1,53 @@
 # Module 12 Report Template
 
 ## Overview of the Analysis
+This notebook builds a model that can identify the creditworthiness of borrowers, solving a classification problem of imbalanced data. We use the data provided under Resources which contains historical lending activity from a peer-to-peer lending services company.
 
-In this section, describe the analysis you completed for the machine learning models used in this Challenge. This might include:
+A logistic regression model is used on both the original dataset and the resampled data(RandomOverSampler module from the imbalanced-learn library was used for resampling)
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any resampling method).
+For both cases we followed this steps (data was split for training and testing):
+1) Counted the values of the target classes.
+3) Trained a logistic regression classifier by instantiating the model, fitting the model with training data and predicting y values using testing data. 
+4) Calculated the balanced accuracy score.
+5) Generated a confusion matrix.
+6) Generate a classification report.
 
 ## Results
 
-Using bulleted lists, describe the balanced accuracy scores and the precision and recall scores of all machine learning models.
-
 * Machine Learning Model 1:
-  * Description of Model 1 Accuracy, Precision, and Recall scores.
-
-
+  - #### Accuracy score:
+    0.952
+  - #### Precision score:
+    Healthy loan: 1.00 <br> 
+    High Risk loan: 0.85
+  - #### Recall scores:
+    Healthy loan: .99 <br> 
+    High Risk loan: .91
+  - #### f1 score:
+    Healthy loan: 1.00 <br> 
+    High Risk loan: .88
 
 * Machine Learning Model 2:
-  * Description of Model 2 Accuracy, Precision, and Recall scores.
+  - #### Accuracy score:
+    0.993
+  - #### Precision score:
+    Healthy loan: 1.00 <br> 
+    High Risk loan: 0.84
+  - #### Recall scores:
+    Healthy loan: .99 <br> 
+    High Risk loan: .99
+  - #### f1 score:
+    Healthy loan: 1.00 <br> 
+    High Risk loan: .91
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
+When looking at the two different machine learning models, we can see that for this analysis resampling the data works best as it yields a better f1 and recall scores. It is important that the model minimizes the false negatives as not detecting a high risk loan could negatively impact the company's performance. 
 
-If you do not recommend any of the models, please justify your reasoning.
+It is important to note that the excercise did not require us to scale the data, I would recommend this to improve the model.
+
+The libraries and dependencies used are:
+- numpy 
+- pandas
+- Path from pathlib 
+- balanced_accuracy_score, confusion_matrix and classification_report_imbalanced from sklearn.metrics import 
