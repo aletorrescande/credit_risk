@@ -6,4 +6,4 @@ The libraries and dependencies used are:
 - numpy
 - pandas
 - Path from pathlib
-- balanced_accuracy_score, confusion_matrix and classification_report_imbalanced from sklearn.metrics import
+- balanced_accuracy_score, confusion_matrix and classification_report_imbalanced from sklearn.metrics
