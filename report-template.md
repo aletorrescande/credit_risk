@@ -44,4 +44,4 @@ For both cases we followed this steps (data was split for training and testing):
 
 When looking at the two different machine learning models, we can see that for this analysis resampling the data works best as it yields a better accuracy, f1 and recall scores. It is important that the model minimizes the false negatives as not detecting a high risk loan could negatively impact the company's performance. 
 
-It is important to note that the excercise did not require us to scale the data, I would recommend this to improve the model.
+As an additional excercise I calculated both models using scaled data, at the end of the notebook we can see that the accuracy score for the original data when is scaled greatly improves as well as the recall score. When looking at the resampled scaled accuracy score and classification report we can observe a slight change in the scores, for best practices I would use the scale resampled model.
